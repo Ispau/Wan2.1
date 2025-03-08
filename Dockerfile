@@ -19,7 +19,12 @@ RUN pip install --no-cache-dir \
     transformers \
     huggingface_hub[easy] \
     easydict \
-    pickleshare
+    pickleshare \
+    imageio \
+    ftfy \
+    diffusers \
+    einops \
+    flash-attn
 
 # Configurar directorio de trabajo
 WORKDIR /app
