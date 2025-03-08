@@ -4,7 +4,9 @@ FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
 # Configuración básica del sistema
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y ffmpeg git python3 python3-pip ninja && \
+# Actualizar repos y asegurarse de que `git` está instalado antes de usarlo
+RUN apt-get update && \
+    apt-get install -y ffmpeg git python3 python3-pip ninja && \
     rm -rf /var/lib/apt/lists/*
 
 # Instalar dependencias de Python con soporte CUDA
